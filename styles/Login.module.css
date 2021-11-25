@@ -1,0 +1,7 @@
+.form {
+	width: 28rem;
+	margin-top: 4rem;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+	border-radius: 6px;
+	padding: 36px 24px;
+}

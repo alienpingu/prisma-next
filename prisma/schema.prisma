@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model answer_translations {
+  id Int @id @default(autoincrement())
+
+}
+
+model answers {
+  id Int @id @default(autoincrement())
+
+}
+
+model categories {
+  id Int @id @default(autoincrement())
+
+}
+
+model category_translations {
+  id Int @id @default(autoincrement())
+
+}
+
+model companies {
+  id Int @id @default(autoincrement())
+
+}
+
+model company_translations {
+  id      Int    @id @default(autoincrement())
+  address String @db.VarChar
+  city    String @db.VarChar
+  state   String @db.VarChar
+
+}
+
+model lenguages {
+  id              Int     @id @default(autoincrement())
+  name            String @db.VarChar
+  surname         String @db.VarChar
+  email           String @db.VarChar
+  password        String @db.VarChar
+  status          Int
+  session_id      String @db.VarChar
+  last_login_time Int
+  insert_time     Int
+  edit_time       Int
+
+}
+
+model poll_translations {
+  id Int @id @default(autoincrement())
+
+}
+
+model polls {
+  id Int @id @default(autoincrement())
+
+}
+
+model question_translations {
+  id Int @id @default(autoincrement())
+
+}
+
+model questions {
+  id Int @id @default(autoincrement())
+
+}
+
+model settings {
+  id Int @id @default(autoincrement())
+
+}
+
+model snippet_transaltions {
+  id          Int  @id @default(autoincrement())
+  snippet_id  Int
+  lenguage_id Int
+  value       Int
+  insert_time Int
+  edit_time   Int
+
+}
+
+model snippets {
+  id         Int  @id @default(autoincrement())
+  code       Int
+  inser_time Int
+  edit_time  Int
+
+}
+
+model users {
+  id              Int   @id @default(autoincrement())
+  insert_time     Int
+  edit_time       Int
+  name            String @db.VarChar(100)
+  surname         String @db.VarChar(100)
+  email           String @db.VarChar(100)
+  password        String @db.VarChar(100)
+  status          String @db.VarChar
+  session_id      String @db.VarChar(100)
+  last_login_time String @db.VarChar(100)
+
+}
+
+model users_polls {
+  id          Int @id @default(autoincrement())
+  insert_time Int
+  edit_time   Int
+
+}
